@@ -1,8 +1,8 @@
 sudo docker login --username=657356100@qq.com registry.cn-hangzhou.aliyuncs.com      #用户名为阿里云账号全名  
-docker build -t docker_demo:0.1 .                    #-t 指定image文件的名字为docker_tag,用冒号指定标签，默认latest  
-sudo docker push registry.cn-hangzhou.aliyuncs.com/wfj/borey:0.1  
+docker build -t registry.cn-hangzhou.aliyuncs.com/wfj/borey:0.2 .  #-t 指定image文件的名字为docker_tag,用冒号指定标签，默认latest  
+sudo docker push registry.cn-hangzhou.aliyuncs.com/wfj/borey:0.2  
 
-docker run -itd --name borey --privileged=true docker_demo:0.1 /usr/sbin/init  
+docker run -itd --name borey --privileged=true registry.cn-hangzhou.aliyuncs.com/wfj/borey:0.2 bash -c 'sh /home/admin/.start.sh && tailf /dev/null'
 #-it 容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器  
 #docker_demo:0.1 image 文件的名字  
 #/bin/bash 容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell  

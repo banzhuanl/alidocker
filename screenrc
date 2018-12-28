@@ -1,0 +1,7 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{= kG}%-w%{.cW}%n %t%{-}%+w %=%{= kG} %H %{..Y} %Y/%m/%d %c:%s "
+altscreen on
+vbell off
+defutf8 on
+escape ^Jj
